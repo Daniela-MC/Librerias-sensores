@@ -36,7 +36,7 @@ void mgsensor::MGRead(int mg_pin)
 int  mgsensor::MGGetPercentage()
 {
   MGRead(mg_pin);
-  Serial.println(voltaje);
+
   
    if ((voltaje/ganancia )>=voltaje_airelimpio) {
       return -1;
