@@ -1,5 +1,3 @@
-/*Support:  Tiequan Shao: support[at]sandboxelectronics.com
-Lisence: Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)*/
 
 #include "MQSensor.h"
 
