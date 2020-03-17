@@ -6,13 +6,13 @@
 #define CO (1)
 #define LPG (2)
 
-const char* ssid = "nuevared";
-const char* pass = "proyecto";
-const char* user = "DMC";
-const char* PubTopic = "publish/DMC/Ir0fZ7ikuMTCRl8obInOigZPGqZh4758";
+const char* ssid = "HOME-49EF";
+const char* pass = "6AC42223F624C156";
+const char* user = "dadeanjuca";
+const char* PubTopic = "channels/1021742/publish/1Z1HKPZSFC0QTCF4";
 const unsigned int WriteInterval = 6000;
 //AskSensors MQTT config
-const char* mqtt_server = "mqtt.asksensors.com";
+const char* mqtt_server = "mqtt.thingspeak.com";
 unsigned int mqtt_port = 1883;
 WiFiClient askClient;
 PubSubClient client(askClient);
@@ -61,11 +61,11 @@ void loop() {
   co = mq_co.MQGetGasPercentage(Ro);
   lpg = mq_lpg.MQGetGasPercentage(Ro);
   co2 = CO2.MGGetPercentage();
-  char mqtt_payload[50] = "";
-  snprintf (mqtt_payload, 50, "m1=%f&m2=%f&m3=%f&m4=%f",ch4,co,lpg,co2);
+  char mqtt_payload[100] = "";
+  snprintf (mqtt_payload, 100, "field1=%f&field2=%f&field3=%f&field4=%f",ch4,co,lpg,co2);
   client.publish(PubTopic, mqtt_payload);
  
-  Serial.println(mqtt_payload);
+  
   Serial.println("----------------------------------------------------------------------------------------------");
   Serial.print("CH4: ");
   Serial.print(ch4);
