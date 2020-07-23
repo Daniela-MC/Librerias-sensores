@@ -7,11 +7,11 @@
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
 
 // Declaration for SSD1306 display connected using software SPI (default case):
-#define OLED_MOSI  48
-#define OLED_CLK   53
-#define OLED_DC    51
-#define OLED_CS    50
-#define OLED_RESET 52
+#define OLED_MOSI  23
+#define OLED_CLK   18
+#define OLED_DC    2
+#define OLED_CS    15
+#define OLED_RESET 4
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT,
   OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
 
@@ -83,6 +83,7 @@ static const unsigned char PROGMEM logo_bmp[] =
 
 void setup() {
   Serial.begin(9600);
+  Serial.print("hola hola");
 
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
   display.begin(SSD1306_SWITCHCAPVCC);
